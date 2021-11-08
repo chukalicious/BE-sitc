@@ -1,14 +1,15 @@
-// Update with your config settings.
+// Update with your database configuration settings
+require("dotenv").config();
 
 module.exports = {
   development: {
-    //will be changing this to postgres
-    client: "sqlite3",
-    //this is for a specific error that happens in sqlite
-    useNullAsDefault: true,
+    client: "pg",
     connection: {
-      //this is for the location and name of the database
-      filename: "./dev.sqlite3",
+      host: "localhost",
+      port: 5432,
+      user: "postgres",
+      database: "test_db",
+      password: process.env.DB_PASSWORD,
     },
     migrations: {
       // location of migrations for the database
