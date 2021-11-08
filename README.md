@@ -1,4 +1,3 @@
-# Server Boiler-plating
-Server setup review exercise
+# Server Boiler-plating with Postgres
 
-This is just practice for setting up an API and connecting a database to it
+Server setup to use Postgres database
