@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chukalicious/server-template.git"
+    "url": "git+https://github.com/chukalicious/postgres-template.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chukalicious/server-template/issues"
+    "url": "https://github.com/chukalicious/postgres-template/issues"
   },
-  "homepage": "https://github.com/chukalicious/server-template#readme",
+  "homepage": "https://github.com/chukalicious/postgres-template#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
