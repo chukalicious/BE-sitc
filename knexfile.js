@@ -9,7 +9,7 @@ module.exports = {
       port: 5432,
       user: "postgres",
       // change this database to the one you will be using for your project
-      database: "test_db",
+      database: "users",
       password: process.env.DB_PASSWORD,
     },
     migrations: {
