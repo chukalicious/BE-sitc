@@ -24,4 +24,16 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+  const id = req.params;
+  db.update(id, req.body)
+    .then((user) => {
+      res.status(203).json(user);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(403).json({ message: "could not update user" });
+    });
+});
+
 module.exports = router;
