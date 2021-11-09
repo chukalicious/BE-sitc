@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const id = req.params;
+  const { id } = req.params;
   db.update(id, req.body)
     .then((user) => {
       res.status(203).json(user);
@@ -33,6 +33,18 @@ router.put("/:id", (req, res) => {
     .catch((err) => {
       console.log(err);
       res.status(403).json({ message: "could not update user" });
+    });
+});
+
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  db.remove(id)
+    .then((user) => {
+      res.status(204).json({ message: "user has been deleted" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).json({ message: "could not delete user st this time" });
     });
 });
 

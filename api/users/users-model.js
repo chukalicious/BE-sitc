@@ -5,6 +5,7 @@ module.exports = {
   find,
   insert,
   update,
+  remove,
 };
 
 function find() {
@@ -16,5 +17,9 @@ function insert(user) {
 }
 
 function update(id, changes) {
-  return db("users").where({ id }).insert(changes).returning("*");
+  return db("users").where("id", Number(id)).update(changes).returning("*");
+}
+
+function remove(id) {
+  return db("users").where({ id }).del().returning("*");
 }
