@@ -4,6 +4,7 @@ module.exports = {
   // database functions to interact with the data
   find,
   insert,
+  update,
 };
 
 function find() {
@@ -11,6 +12,9 @@ function find() {
 }
 
 function insert(user) {
-  // need to find pg method to return the object posted
-  return db("users").insert(user);
+  return db("users").insert(user).returning("*");
+}
+
+function update(id, changes) {
+  return db("users").where({ id }).insert(changes).returning("*");
 }
